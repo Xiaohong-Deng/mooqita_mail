@@ -1,0 +1,8 @@
+<h1>Welcome, Please enter your email address if you want us to send you a mail</h1>
+<div class="col-md-6 col-md-offset-3">
+<%= form_for(:session, url: send_mail_path) do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control' %>
+
+  <%= f.submit "Send me a mail", class: 'btn btn-primary' %>
+<% end %>
