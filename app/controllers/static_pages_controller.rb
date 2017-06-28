@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
   def send_mail
     email = VALID_EMAIL_REGEX.match(params[:session][:email])
     if email.nil?
-      flash[:alert] = "Invalid email address. Greeting mail has not been sent."
+      flash[:danger] = "Invalid email address. Greeting mail has not been sent."
     else
       SampleMailer.greeting_mail(email).deliver_now
       flash[:success] = "Greeting mail has been successfully sent, please check your email."
